@@ -1,0 +1,31 @@
+{
+  "name": "redux-simple-crud",
+  "version": "0.1.0",
+  "description": "Create React/Redux CRUD application",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.3",
+    "reactstrap": "^6.1.0",
+    "redux": "^3.6.0",
+    "redux-form-helper": "latest",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.1.0",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  }
+}
