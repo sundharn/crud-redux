@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ListUser.css';
-import {EDIT_USER} from '../../actions/actionTypes';
+import '../../../public/css/ListUser.css';
+import {editUser} from '../../actions/userActions';
 
 
 class ListUser extends Component {
@@ -15,7 +15,7 @@ class ListUser extends Component {
         {this.props.users.map((user) => (
                     <li className="hand" 
           key={user.id}
-          onClick={()=>this.props.dispatch({type:EDIT_USER,user:user})}
+          onClick={()=>this.props.dispatch(editUser(user))}
           >{user.name}</li>				
 					
                 ))}    
@@ -27,10 +27,9 @@ class ListUser extends Component {
     }
 }
 
-
-const mapStateToProps = (state) => {
+ const mapStateToProps = (state) => {
     return {
         users: state
     }
-}
+} 
 export default connect(mapStateToProps)(ListUser);

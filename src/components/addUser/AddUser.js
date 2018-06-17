@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {ADD_USER} from '../../actions/actionTypes';
-import './AddUser.css';
+import {createUser} from '../../actions/userActions';
+import '../../../public/css/AddUser.css';
 
 class AddUser extends Component {
+	
   handleSubmit = (e) => {
     e.preventDefault();
     const name = this.getName.value;
     const role =  this.getRole.value;
     const data = {
-      id: new Date(),
+	  id:new Date(),	
       name,
       role,
 	  editing:false
     }
 	//console.log(data);
 	
-	this.props.dispatch({
-      type:ADD_USER,
-      data});
+	this.props.dispatch(createUser(data));
     this.getName.value = '';
     this.getRole.value = '';
   }
@@ -32,7 +31,7 @@ return (
    <div className="form-group row">
     <label  className="col-sm-2 col-form-label">Name</label>
     <div className="col-sm-10">
-      <input className="form-control" required type="text" ref={(input)=>this.getName = input} 
+      <input className="form-control" id="user_name" required type="text" ref={(input)=>this.getName = input} 
     placeholder="Enter Name" />
     </div>
   </div>
@@ -40,7 +39,7 @@ return (
   <div className="form-group row">
     <label  className="col-sm-2 col-form-label">Role</label>
     <div className="col-sm-10">
-      <input  className="form-control" required type="text" ref={(input)=>this.getRole = input} 
+      <input  className="form-control" id="user_role" required type="text" ref={(input)=>this.getRole = input} 
     placeholder="Enter Role" />
     </div>
   </div>

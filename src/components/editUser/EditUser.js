@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './EditUser.css';
-import {UPDATE_USER,DELETE_USER} from '../../actions/actionTypes';
+import '../../../public/css/EditUser.css';
+import {updateUser,deleteUser} from '../../actions/userActions';
 
 class EditUser extends Component {
 handleEdit = (e) => {
@@ -12,7 +12,7 @@ handleEdit = (e) => {
     newName,
     newRole
   }
-  this.props.dispatch({ type: UPDATE_USER, id: this.props.user.id, data: data })
+  this.props.dispatch(updateUser(this.props.user.id, data))
 }
 render() {
 return (
@@ -24,7 +24,7 @@ return (
 	  <div className="form-group row">
     <label  className="col-sm-2 col-form-label">Name</label>
     <div className="col-sm-10">
-      <input className="form-control" required type="text" ref={(input) => this.getName = input}
+      <input className="form-control" required id="user_name" type="text" ref={(input) => this.getName = input}
     defaultValue={this.props.user.name} placeholder="Enter Name" />
     </div>
   </div>
@@ -32,14 +32,14 @@ return (
   <div className="form-group row">
     <label  className="col-sm-2 col-form-label">Role</label>
     <div className="col-sm-10">
-      <input  className="form-control" required type="text" ref={(input)=>this.getRole = input} 
+      <input  className="form-control" required type="text" id="user_role" ref={(input)=>this.getRole = input} 
     defaultValue={this.props.user.role} placeholder="Enter Role" />
     </div>
   </div>
   
   <div className="form-group row">
     <div className="offset-sm-5 col-sm-7">      
-      <button type="button" onClick={()=>this.props.dispatch({type:DELETE_USER,id:this.props.user.id})} className="btn btn-danger">Delete</button>
+      <button type="button" onClick={()=>this.props.dispatch(deleteUser(this.props.user.id))} className="btn btn-danger">Delete</button>
       <button type="submit" className="btn btn-primary">Update</button>
     </div>
   </div>
