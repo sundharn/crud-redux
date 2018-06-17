@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../../../public/css/EditUser.css';
 import {updateUser,deleteUser} from '../../actions/userActions';
 
 class EditUser extends Component {
