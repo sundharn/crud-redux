@@ -32,6 +32,8 @@ It will run the app in development mode.
 
 Open (http://localhost:3000) to view it in browser.
 
-File Structure
+## Application screenhots
+
+Please find application screenshots in screenshot folder 
 
 
