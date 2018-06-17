@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {createUser} from '../../actions/userActions';
-import '../../../public/css/AddUser.css';
 
 class AddUser extends Component {
 	
